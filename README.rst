@@ -52,8 +52,8 @@ Releases
 --------
 
 **Latest development release**:
-    | Version: 0.5.0
-    | Released: 2022-09-02
+    | Version: 0.0.0
+    | Released: 2024-03-25
 
 **0.0 (2024-02-25)**:
     Initial version.
