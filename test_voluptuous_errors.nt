@@ -1,0 +1,559 @@
+basic_tests:
+
+    # two level, no normalization
+    fuselage:
+        schema:
+            > {
+            >     "key1": str,
+            >     Required("key2"): str,
+            >     "key3": as_int,
+            > }
+        cases:
+            flutter:
+                given:
+                    > key1: value1
+                    > key3: 3
+                expected:
+                    > error: @1: required key is missing.
+                    >     ‘key2’ was not found.
+            livery:
+                given:
+                    > -
+                    > -
+                expected:
+                    > error: @1: expected a key-value pair.
+                    >        1 ❬-❭
+                    >           ▲
+            femur:
+                source: femur
+                given:
+                    > >
+                    > >
+                expected:
+                    > error: femur@1-2: expected a key-value pair.
+                    >        1 ❬>❭
+                    >           ▲
+            tasty:
+                given:
+                    > >
+                    > # just taken a break
+                    > >
+                expected:
+                    > error: @1-3: expected a key-value pair.
+                    >        1 ❬>❭
+                    >           ▲
+            mincer:
+                given:
+                    > # just taken a break
+                    > >
+                    > >
+                expected:
+                    > error: @2-3: expected a key-value pair.
+                    >        2 ❬>❭
+                    >           ▲
+            minaret:
+                given:
+                    > >
+                    > >
+                    > # just taken a break
+                expected:
+                    > error: @1-2: expected a key-value pair.
+                    >        1 ❬>❭
+                    >           ▲
+            moult:
+                given:
+                    > key1: value1
+                    > key3: value3
+                expected:
+                    > error: @2, key3: not a valid value.
+                    >        2 ❬key3: value3❭
+                    >                 ▲
+                    > error: @1: required key is missing.
+                    >     ‘key2’ was not found.
+            revive:
+                source: revive
+                given:
+                    > key1: value1
+                    > key3: value3
+                expected:
+                    > error: revive@2, key3: not a valid value.
+                    >        2 ❬key3: value3❭
+                    >                 ▲
+                    > error: revive@1: required key is missing.
+                    >     ‘key2’ was not found.
+            tauten:
+                source: tauten
+                given:
+                    > key1: value1
+                    > key2: value2
+                    > key3: 3
+                    > key4: value4
+                expected:
+                    > error: tauten@4, key4: unknown key.
+                    >        4 ❬key4: value4❭
+                    >           ▲
+
+    # three level, no normalization
+    pirouette:
+        schema:
+            > {
+            >     "key1": {
+            >         "key11": str,
+            >         Required("key12"): str,
+            >         "key13": as_int,
+            >     }
+            > }
+        cases:
+            brassiere:
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key13: 3
+                expected:
+                    > error: @2, key1: required key is missing.
+                    >     ‘key12’ was not found.
+            snobby:
+                given:
+                    > key1:
+                    >     -
+                    >     -
+                expected:
+                    > error: @2, key1: expected a key-value pair.
+                    >        2 ❬    -❭
+                    >               ▲
+            clinic:
+                source: clinic
+                given:
+                    > key1:
+                    >     >
+                    >     >
+                expected:
+                    > error: clinic@2-3, key1: expected a key-value pair.
+                    >        2 ❬    >❭
+                    >                ▲
+            premiere:
+                given:
+                    > key1:
+                    >     >
+                    >     # just taken a break
+                    >     >
+                expected:
+                    > error: @2-4, key1: expected a key-value pair.
+                    >        2 ❬    >❭
+                    >                ▲
+            polygon:
+                given:
+                    > key1:
+                    >     # just taken a break
+                    >     >
+                    >     >
+                expected:
+                    > error: @3-4, key1: expected a key-value pair.
+                    >        3 ❬    >❭
+                    >                ▲
+            eyelash:
+                given:
+                    > key1:
+                    >     >
+                    >     >
+                    >     # just taken a break
+                expected:
+                    > error: @2-3, key1: expected a key-value pair.
+                    >        2 ❬    >❭
+                    >                ▲
+            fruit:
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key13: value13
+                expected:
+                    > error: @3, key1›key13: not a valid value.
+                    >        3 ❬    key13: value13❭
+                    >                      ▲
+                    > error: @2, key1: required key is missing.
+                    >     ‘key12’ was not found.
+            developer:
+                source: developer
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key13: value13
+                expected:
+                    > error: developer@3, key1›key13: not a valid value.
+                    >        3 ❬    key13: value13❭
+                    >                      ▲
+                    > error: developer@2, key1: required key is missing.
+                    >     ‘key12’ was not found.
+            caliber:
+                source: caliber
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key12: value12
+                    >     key13: 3
+                    >     key14: value14
+                expected:
+                    > error: caliber@5, key1›key14: unknown key.
+                    >        5 ❬    key14: value14❭
+                    >               ▲
+
+    # two level, with normalization
+    glisten:
+        schema:
+            > {
+            >     "key_1": str,
+            >     Required("key_2"): str,
+            >     "key_3": as_int,
+            > }
+        normalize: to_snake_case
+        cases:
+            barnyard:
+                given:
+                    > Key 1: value1
+                    > Key 3: 3
+                expected:
+                    > error: @1: required key is missing.
+                    >     ‘key_2’ was not found.
+            disburse:
+                given:
+                    > -
+                    > -
+                expected:
+                    > error: @1: expected a key-value pair.
+                    >        1 ❬-❭
+                    >           ▲
+            sprain:
+                source: sprain
+                given:
+                    > >
+                    > >
+                expected:
+                    > error: sprain@1-2: expected a key-value pair.
+                    >        1 ❬>❭
+                    >           ▲
+            raindrop:
+                given:
+                    > >
+                    > # just taken a break
+                    > >
+                expected:
+                    > error: @1-3: expected a key-value pair.
+                    >        1 ❬>❭
+                    >           ▲
+            expend:
+                given:
+                    > # just taken a break
+                    > >
+                    > >
+                expected:
+                    > error: @2-3: expected a key-value pair.
+                    >        2 ❬>❭
+                    >           ▲
+            adaptor:
+                given:
+                    > >
+                    > >
+                    > # just taken a break
+                expected:
+                    > error: @1-2: expected a key-value pair.
+                    >        1 ❬>❭
+                    >           ▲
+            festivity:
+                given:
+                    > Key 1: value1
+                    > Key 3: value3
+                expected:
+                    > error: @2, Key 3: not a valid value.
+                    >        2 ❬Key 3: value3❭
+                    >                  ▲
+                    > error: @1: required key is missing.
+                    >     ‘key_2’ was not found.
+            composer:
+                source: composer
+                given:
+                    > Key 1: value1
+                    > Key 3: value3
+                expected:
+                    > error: composer@2, Key 3: not a valid value.
+                    >        2 ❬Key 3: value3❭
+                    >                  ▲
+                    > error: composer@1: required key is missing.
+                    >     ‘key_2’ was not found.
+            oboist:
+                source: oboist
+                given:
+                    > Key 1: value1
+                    > Key 2: value2
+                    > Key 3: 3
+                    > Key 4: value4
+                expected:
+                    > error: oboist@4, Key 4: unknown key.
+                    >        4 ❬Key 4: value4❭
+                    >           ▲
+
+    # three level, with normalization
+    auditor:
+        schema:
+            > {
+            >     "key_1": {
+            >         "key_11": str,
+            >         Required("key_12"): str,
+            >         "key_13": as_int,
+            >     }
+            > }
+        normalize: to_snake_case
+        cases:
+            impart:
+                given:
+                    > Key 1:
+                    >     Key 11: value11
+                    >     Key 13: 3
+                expected:
+                    > error: @2, Key 1: required key is missing.
+                    >     ‘key_12’ was not found.
+            starve:
+                given:
+                    > Key 1:
+                    >     -
+                    >     -
+                expected:
+                    > error: @2, Key 1: expected a key-value pair.
+                    >        2 ❬    -❭
+                    >               ▲
+            knife:
+                source: knife
+                given:
+                    > Key 1:
+                    >     >
+                    >     >
+                expected:
+                    > error: knife@2-3, Key 1: expected a key-value pair.
+                    >        2 ❬    >❭
+                    >                ▲
+            wreck:
+                given:
+                    > Key 1:
+                    >     >
+                    >     # just taken a break
+                    >     >
+                expected:
+                    > error: @2-4, Key 1: expected a key-value pair.
+                    >        2 ❬    >❭
+                    >                ▲
+            taxpayer:
+                given:
+                    > Key 1:
+                    >     # just taken a break
+                    >     >
+                    >     >
+                expected:
+                    > error: @3-4, Key 1: expected a key-value pair.
+                    >        3 ❬    >❭
+                    >                ▲
+            westerner:
+                given:
+                    > Key 1:
+                    >     >
+                    >     >
+                    >     # just taken a break
+                expected:
+                    > error: @2-3, Key 1: expected a key-value pair.
+                    >        2 ❬    >❭
+                    >                ▲
+            reassess:
+                given:
+                    > Key 1:
+                    >     Key 11: value11
+                    >     Key 13: value13
+                expected:
+                    > error: @3, Key 1›Key 13: not a valid value.
+                    >        3 ❬    Key 13: value13❭
+                    >                       ▲
+                    > error: @2, Key 1: required key is missing.
+                    >     ‘key_12’ was not found.
+            undermine:
+                source: undermine
+                given:
+                    > Key 1:
+                    >     Key 11: value11
+                    >     Key 13: value13
+                expected:
+                    > error: undermine@3, Key 1›Key 13: not a valid value.
+                    >        3 ❬    Key 13: value13❭
+                    >                       ▲
+                    > error: undermine@2, Key 1: required key is missing.
+                    >     ‘key_12’ was not found.
+            threat:
+                source: threat
+                given:
+                    > Key 1:
+                    >     Key 11: value11
+                    >     Key 12: value12
+                    >     Key 13: 3
+                    >     Key 14: value14
+                expected:
+                    > error: threat@5, Key 1›Key 14: unknown key.
+                    >        5 ❬    Key 14: value14❭
+                    >               ▲
+
+    # two level, no normalization, no keymap
+    parody:
+        schema:
+            > {
+            >     "key1": str,
+            >     Required("key2"): str,
+            >     "key3": as_int,
+            > }
+        keymap: 'no
+        cases:
+            rudder:
+                given:
+                    > key1: value1
+                    > key3: 3
+                expected:
+                    > error: key2: required key is missing.
+            tablet:
+                given:
+                    > -
+                    > -
+                expected:
+                    > error: expected a key-value pair.
+            talent:
+                source: talent
+                given:
+                    > >
+                    > >
+                expected:
+                    > error: talent: expected a key-value pair.
+            plaything:
+                given:
+                    > >
+                    > # just taken a break
+                    > >
+                expected:
+                    > error: expected a key-value pair.
+            portfolio:
+                given:
+                    > # just taken a break
+                    > >
+                    > >
+                expected:
+                    > error: expected a key-value pair.
+            bridge:
+                given:
+                    > >
+                    > >
+                    > # just taken a break
+                expected:
+                    > error: expected a key-value pair.
+            syndicate:
+                given:
+                    > key1: value1
+                    > key3: value3
+                expected:
+                    > error: key3: not a valid value.
+                    > error: key2: required key is missing.
+            spade:
+                source: spade
+                given:
+                    > key1: value1
+                    > key3: value3
+                expected:
+                    > error: spade, key3: not a valid value.
+                    > error: spade, key2: required key is missing.
+            blossom:
+                source: blossom
+                given:
+                    > key1: value1
+                    > key2: value2
+                    > key3: 3
+                    > key4: value4
+                expected:
+                    > error: blossom, key4: unknown key.
+
+    # three level, no normalization, no keymap
+    hydrant:
+        schema:
+            > {
+            >     "key1": {
+            >         "key11": str,
+            >         Required("key12"): str,
+            >         "key13": as_int,
+            >     }
+            > }
+        keymap: 'no
+        cases:
+            kiosk:
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key13: 3
+                expected:
+                    > error: key1›key12: required key is missing.
+            action:
+                given:
+                    > key1:
+                    >     -
+                    >     -
+                expected:
+                    > error: key1: expected a key-value pair.
+            stimulate:
+                source: stimulate
+                given:
+                    > key1:
+                    >     >
+                    >     >
+                expected:
+                    > error: stimulate, key1: expected a key-value pair.
+            league:
+                given:
+                    > key1:
+                    >     >
+                    >     # just taken a break
+                    >     >
+                expected:
+                    > error: key1: expected a key-value pair.
+            thorny:
+                given:
+                    > key1:
+                    >     # just taken a break
+                    >     >
+                    >     >
+                expected:
+                    > error: key1: expected a key-value pair.
+            skulk:
+                given:
+                    > key1:
+                    >     >
+                    >     >
+                    >     # just taken a break
+                expected:
+                    > error: key1: expected a key-value pair.
+            hairline:
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key13: value13
+                expected:
+                    > error: key1›key13: not a valid value.
+                    > error: key1›key12: required key is missing.
+            tortoise:
+                source: tortoise
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key13: value13
+                expected:
+                    > error: tortoise, key1›key13: not a valid value.
+                    > error: tortoise, key1›key12: required key is missing.
+            style:
+                source: style
+                given:
+                    > key1:
+                    >     key11: value11
+                    >     key12: value12
+                    >     key13: 3
+                    >     key14: value14
+                expected:
+                    > error: style, key1›key14: unknown key.
+

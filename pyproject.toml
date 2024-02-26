@@ -1,0 +1,14 @@
+[project]
+name = "voluptuous_errors"
+version = "0.0"
+description = "report voluptuous errors"
+requires-python = ">=3.6"
+dependencies = [
+    "inform",
+    "nestedtext>=3.7",
+    "voluptuous",
+]
+
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
