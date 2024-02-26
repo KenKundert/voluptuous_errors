@@ -1,5 +1,5 @@
-Voluptuous Errors — Error Reporting for Voluptuous with NestedText and Inform
-=============================================================================
+Voluptuous Errors — Voluptuous Error Reporting when using NestedText and Inform
+===============================================================================
 
 .. image:: https://pepy.tech/badge/voluptuous_errors/month
     :target: https://pepy.tech/project/voluptuous_errors
