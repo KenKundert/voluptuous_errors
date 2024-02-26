@@ -61,5 +61,5 @@ Releases
 
 .. _voluptuous: https://github.com/alecthomas/voluptuous
 .. _nestedtext: https://nestedtext.org
-.. _inform: https://readthedocs.io/inform
+.. _inform: https://inform.readthedocs.io
 
