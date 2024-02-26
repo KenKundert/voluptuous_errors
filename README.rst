@@ -44,8 +44,9 @@ with inform_.  Here is a typical use of this function::
     ...      error(os_error(e))
     >>>  terminate()
 
-This code will report all errors found by Voluptuous when reading the settings 
-file.
+This code reports all errors found by *Voluptuous* when reading the settings 
+file.  It employs the *NestedText* *keymap* facility to annotate the error 
+messages with helpful context such as line numbers.
 
 
 Releases
