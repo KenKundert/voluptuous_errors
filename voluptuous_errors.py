@@ -42,7 +42,7 @@ def report_voluptuous_errors(multiple_invalid, keymap, source=None, sep="›"):
             culprit = cull((file_and_lineno, culprit))
         else:
             keys = sep.join(str(c) for c in err.path)
-            culprit=cull([source, keys])
+            culprit = cull([source, keys])
             codicil = None
 
         # report error

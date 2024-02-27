@@ -9,6 +9,18 @@ dependencies = [
     "nestedtext>=3.7",
     "voluptuous",
 ]
+authors = [
+    {name = "Ken Kundert"},
+    {email = "quantiphy@nurdletech.com"}
+]
+classifiers = [
+    # "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
 
 [build-system]
 requires = ["flit_core >=2,<4"]
