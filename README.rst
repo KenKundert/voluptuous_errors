@@ -48,6 +48,15 @@ This code reports all errors found by *Voluptuous* when reading the settings
 file.  It employs the *NestedText* *keymap* facility to annotate the error 
 messages with helpful context such as line numbers.
 
+You can map Voluptuous error messages by importing and modifying 
+*voluptuous_error_msg_mappings*.  For example::
+
+    voluptuous_error_msg_mappings["expected a table name"] = ("unknown table.", "key")
+
+The value consists of two values, the new message, and the location they message 
+refers to.  This second value may be either "key" or "value".
+
+
 
 Releases
 --------
