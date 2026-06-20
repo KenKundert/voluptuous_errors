@@ -4,7 +4,7 @@
 # reporting the errors as it allows for multiple errors to be reported.
 
 # IMPORTS {{{1
-from inform import cull, error, full_stop, is_array, is_mapping
+from inform import cull, error, errors_accrued, full_stop, is_array, is_mapping
 import nestedtext as nt
 
 # GLOBALS {{{1
@@ -81,3 +81,5 @@ def report_voluptuous_errors(multiple_invalid, data=None, *, keymap=None, source
 
         # report error
         error(full_stop(msg), culprit=culprit, codicil=codicil)
+
+    return errors_accrued()
