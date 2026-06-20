@@ -10,3 +10,6 @@ files:
     voluptuous_errors.py:
         version: __version__
         date: __released__
+    README.rst:
+        version: Version
+        date: Released

@@ -57,16 +57,23 @@ The value consists of two values, the new message, and the location they message
 refers to.  This second value may be either "key" or "value".
 
 
-
 Releases
 --------
 
-**Latest development release**:
-    | Version: 0.0.0
-    | Released: 2024-03-25
+Latest development release
+""""""""""""""""""""""""""
+| Version: 0.0.0
+| Released: 2024-03-25
 
-**0.0 (2024-02-25)**:
-    Initial version.
+
+0.1 (2026-06-10)
+""""""""""""""""
+- Improve error message (include value as codicil if appropriate).
+
+
+0.0 (2024-02-25)
+""""""""""""""""
+- Initial version.
 
 .. _voluptuous: https://github.com/alecthomas/voluptuous
 .. _nestedtext: https://nestedtext.org
