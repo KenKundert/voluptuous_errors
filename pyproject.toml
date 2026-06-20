@@ -1,6 +1,6 @@
 [project]
 name = "voluptuous_errors"
-version = "0.0"
+version = "0.1"
 description = "report voluptuous errors"
 readme = "README.rst"
 requires-python = ">=3.8"
