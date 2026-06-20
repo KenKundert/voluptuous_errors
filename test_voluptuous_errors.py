@@ -1,5 +1,5 @@
 # IMPORTS {{{1
-from inform import Inform, indent
+from inform import Error, Inform, indent
 import nestedtext as nt
 from functools import partial
 from parametrize_from_file import parametrize
@@ -114,7 +114,10 @@ def test_basic(capsys, subtests, scenario, schema, cases, normalize, keymap):
             with pytest.raises(MultipleInvalid) as exception:
                 validate(data)
             with Inform(prog_name=False):
-                report_voluptuous_errors(exception.value, keymap, case.get("source"))
+                report_voluptuous_errors(
+                    exception.value, data,
+                    keymap=keymap, source=case.get("source")
+                )
             stdout, stderr = capsys.readouterr()
             checker = Checker(full_name)
             checker.verbatim_check("", stderr.rstrip(), "stderr")

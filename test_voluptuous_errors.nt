@@ -22,6 +22,7 @@ basic_tests:
                     > -
                 expected:
                     > error: @1: expected a key-value pair.
+                    >     Found list.
                     >        1 ❬-❭
                     >           ▲
             femur:
@@ -31,6 +32,7 @@ basic_tests:
                     > >
                 expected:
                     > error: femur@1-2: expected a key-value pair.
+                    >     Found '\n'.
                     >        1 ❬>❭
                     >           ▲
             tasty:
@@ -40,6 +42,7 @@ basic_tests:
                     > >
                 expected:
                     > error: @1-3: expected a key-value pair.
+                    >     Found '\n'.
                     >        1 ❬>❭
                     >           ▲
             mincer:
@@ -49,6 +52,7 @@ basic_tests:
                     > >
                 expected:
                     > error: @2-3: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬>❭
                     >           ▲
             minaret:
@@ -58,6 +62,7 @@ basic_tests:
                     > # just taken a break
                 expected:
                     > error: @1-2: expected a key-value pair.
+                    >     Found '\n'.
                     >        1 ❬>❭
                     >           ▲
             moult:
@@ -66,6 +71,7 @@ basic_tests:
                     > key3: value3
                 expected:
                     > error: @2, key3: not a valid value.
+                    >     Found 'value3'.
                     >        2 ❬key3: value3❭
                     >                 ▲
                     > error: @1: required key is missing.
@@ -77,6 +83,7 @@ basic_tests:
                     > key3: value3
                 expected:
                     > error: revive@2, key3: not a valid value.
+                    >     Found 'value3'.
                     >        2 ❬key3: value3❭
                     >                 ▲
                     > error: revive@1: required key is missing.
@@ -119,6 +126,7 @@ basic_tests:
                     >     -
                 expected:
                     > error: @2, key1: expected a key-value pair.
+                    >     Found list.
                     >        2 ❬    -❭
                     >               ▲
             clinic:
@@ -129,6 +137,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: clinic@2-3, key1: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬    >❭
                     >                ▲
             premiere:
@@ -139,6 +148,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: @2-4, key1: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬    >❭
                     >                ▲
             polygon:
@@ -149,6 +159,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: @3-4, key1: expected a key-value pair.
+                    >     Found '\n'.
                     >        3 ❬    >❭
                     >                ▲
             eyelash:
@@ -159,6 +170,7 @@ basic_tests:
                     >     # just taken a break
                 expected:
                     > error: @2-3, key1: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬    >❭
                     >                ▲
             fruit:
@@ -168,6 +180,7 @@ basic_tests:
                     >     key13: value13
                 expected:
                     > error: @3, key1›key13: not a valid value.
+                    >     Found 'value13'.
                     >        3 ❬    key13: value13❭
                     >                      ▲
                     > error: @2, key1: required key is missing.
@@ -180,6 +193,7 @@ basic_tests:
                     >     key13: value13
                 expected:
                     > error: developer@3, key1›key13: not a valid value.
+                    >     Found 'value13'.
                     >        3 ❬    key13: value13❭
                     >                      ▲
                     > error: developer@2, key1: required key is missing.
@@ -220,6 +234,7 @@ basic_tests:
                     > -
                 expected:
                     > error: @1: expected a key-value pair.
+                    >     Found list.
                     >        1 ❬-❭
                     >           ▲
             sprain:
@@ -229,6 +244,7 @@ basic_tests:
                     > >
                 expected:
                     > error: sprain@1-2: expected a key-value pair.
+                    >     Found '\n'.
                     >        1 ❬>❭
                     >           ▲
             raindrop:
@@ -238,6 +254,7 @@ basic_tests:
                     > >
                 expected:
                     > error: @1-3: expected a key-value pair.
+                    >     Found '\n'.
                     >        1 ❬>❭
                     >           ▲
             expend:
@@ -247,6 +264,7 @@ basic_tests:
                     > >
                 expected:
                     > error: @2-3: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬>❭
                     >           ▲
             adaptor:
@@ -256,6 +274,7 @@ basic_tests:
                     > # just taken a break
                 expected:
                     > error: @1-2: expected a key-value pair.
+                    >     Found '\n'.
                     >        1 ❬>❭
                     >           ▲
             festivity:
@@ -264,6 +283,7 @@ basic_tests:
                     > Key 3: value3
                 expected:
                     > error: @2, Key 3: not a valid value.
+                    >     Found 'value3'.
                     >        2 ❬Key 3: value3❭
                     >                  ▲
                     > error: @1: required key is missing.
@@ -275,6 +295,7 @@ basic_tests:
                     > Key 3: value3
                 expected:
                     > error: composer@2, Key 3: not a valid value.
+                    >     Found 'value3'.
                     >        2 ❬Key 3: value3❭
                     >                  ▲
                     > error: composer@1: required key is missing.
@@ -318,6 +339,7 @@ basic_tests:
                     >     -
                 expected:
                     > error: @2, Key 1: expected a key-value pair.
+                    >     Found list.
                     >        2 ❬    -❭
                     >               ▲
             knife:
@@ -328,6 +350,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: knife@2-3, Key 1: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬    >❭
                     >                ▲
             wreck:
@@ -338,6 +361,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: @2-4, Key 1: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬    >❭
                     >                ▲
             taxpayer:
@@ -348,6 +372,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: @3-4, Key 1: expected a key-value pair.
+                    >     Found '\n'.
                     >        3 ❬    >❭
                     >                ▲
             westerner:
@@ -358,6 +383,7 @@ basic_tests:
                     >     # just taken a break
                 expected:
                     > error: @2-3, Key 1: expected a key-value pair.
+                    >     Found '\n'.
                     >        2 ❬    >❭
                     >                ▲
             reassess:
@@ -367,6 +393,7 @@ basic_tests:
                     >     Key 13: value13
                 expected:
                     > error: @3, Key 1›Key 13: not a valid value.
+                    >     Found 'value13'.
                     >        3 ❬    Key 13: value13❭
                     >                       ▲
                     > error: @2, Key 1: required key is missing.
@@ -379,6 +406,7 @@ basic_tests:
                     >     Key 13: value13
                 expected:
                     > error: undermine@3, Key 1›Key 13: not a valid value.
+                    >     Found 'value13'.
                     >        3 ❬    Key 13: value13❭
                     >                       ▲
                     > error: undermine@2, Key 1: required key is missing.
@@ -418,6 +446,7 @@ basic_tests:
                     > -
                 expected:
                     > error: expected a key-value pair.
+                    >     Found list.
             talent:
                 source: talent
                 given:
@@ -425,6 +454,7 @@ basic_tests:
                     > >
                 expected:
                     > error: talent: expected a key-value pair.
+                    >     Found '\n'.
             plaything:
                 given:
                     > >
@@ -432,6 +462,7 @@ basic_tests:
                     > >
                 expected:
                     > error: expected a key-value pair.
+                    >     Found '\n'.
             portfolio:
                 given:
                     > # just taken a break
@@ -439,6 +470,7 @@ basic_tests:
                     > >
                 expected:
                     > error: expected a key-value pair.
+                    >     Found '\n'.
             bridge:
                 given:
                     > >
@@ -446,12 +478,14 @@ basic_tests:
                     > # just taken a break
                 expected:
                     > error: expected a key-value pair.
+                    >     Found '\n'.
             syndicate:
                 given:
                     > key1: value1
                     > key3: value3
                 expected:
                     > error: key3: not a valid value.
+                    >     Found 'value3'.
                     > error: key2: required key is missing.
             spade:
                 source: spade
@@ -460,6 +494,7 @@ basic_tests:
                     > key3: value3
                 expected:
                     > error: spade, key3: not a valid value.
+                    >     Found 'value3'.
                     > error: spade, key2: required key is missing.
             blossom:
                 source: blossom
@@ -497,6 +532,7 @@ basic_tests:
                     >     -
                 expected:
                     > error: key1: expected a key-value pair.
+                    >     Found list.
             stimulate:
                 source: stimulate
                 given:
@@ -505,6 +541,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: stimulate, key1: expected a key-value pair.
+                    >     Found '\n'.
             league:
                 given:
                     > key1:
@@ -513,6 +550,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: key1: expected a key-value pair.
+                    >     Found '\n'.
             thorny:
                 given:
                     > key1:
@@ -521,6 +559,7 @@ basic_tests:
                     >     >
                 expected:
                     > error: key1: expected a key-value pair.
+                    >     Found '\n'.
             skulk:
                 given:
                     > key1:
@@ -529,6 +568,7 @@ basic_tests:
                     >     # just taken a break
                 expected:
                     > error: key1: expected a key-value pair.
+                    >     Found '\n'.
             hairline:
                 given:
                     > key1:
@@ -536,6 +576,7 @@ basic_tests:
                     >     key13: value13
                 expected:
                     > error: key1›key13: not a valid value.
+                    >     Found 'value13'.
                     > error: key1›key12: required key is missing.
             tortoise:
                 source: tortoise
@@ -545,6 +586,7 @@ basic_tests:
                     >     key13: value13
                 expected:
                     > error: tortoise, key1›key13: not a valid value.
+                    >     Found 'value13'.
                     > error: tortoise, key1›key12: required key is missing.
             style:
                 source: style
