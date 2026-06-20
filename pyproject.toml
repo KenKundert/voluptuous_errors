@@ -3,10 +3,9 @@ name = "voluptuous_errors"
 version = "0.0"
 description = "report voluptuous errors"
 readme = "README.rst"
-requires-python = ">=3.6"
+requires-python = ">=3.8"
 dependencies = [
     "inform",
-    # "nestedtext>=3.7",
     "nestedtext",
     "voluptuous",
 ]
@@ -22,6 +21,11 @@ classifiers = [
     "Operating System :: POSIX :: Linux",
     "Programming Language :: Python :: 3",
 ]
+
+[project.urls]
+homepage = "https://github.com/KenKundert/voluptuous_errors"
+repository = "https://github.com/KenKundert/voluptuous_errors"
+
 
 [build-system]
 requires = ["flit_core >=2,<4"]
