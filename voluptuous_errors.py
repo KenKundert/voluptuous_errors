@@ -40,7 +40,10 @@ def _summarize_value(value):
     return value
 
 # report_voluptuous_errors() {{{1
-def report_voluptuous_errors(multiple_invalid, data=None, *, keymap=None, source=None, sep="›", path_fmt="{path}@{lines}"):
+def report_voluptuous_errors(
+    multiple_invalid, data=None, *,
+    keymap=None, source=None, sep="›", path_fmt="{path}@{lines}"
+):
     source = str(source) if source else ""
 
     for err in multiple_invalid.errors:
@@ -53,8 +56,13 @@ def report_voluptuous_errors(multiple_invalid, data=None, *, keymap=None, source
         # get metadata about error
         codicil = ()
         if keymap:
+            # build culprit
             culprit = nt.get_keys(err.path, keymap=keymap, strict="found", sep=sep)
             line_nums = nt.get_line_numbers(err.path, keymap, kind=kind, sep="-", strict=False)
+            file_and_lineno = path_fmt.format(path=str(source), lines=line_nums)
+            culprit = cull((file_and_lineno, culprit))
+
+            # build codicil
             loc = nt.get_location(err.path, keymap)
             if data and kind == 'value':
                 try:
@@ -68,9 +76,6 @@ def report_voluptuous_errors(multiple_invalid, data=None, *, keymap=None, source
             else:  # required key is missing
                 missing = nt.get_keys(err.path, keymap, strict="missing", sep=sep)
                 codicil += (f"‘{missing}’ was not found.",)
-
-            file_and_lineno = path_fmt.format(path=str(source), lines=line_nums)
-            culprit = cull((file_and_lineno, culprit))
         else:
             keys = sep.join(str(c) for c in err.path)
             culprit = cull([source, keys])
