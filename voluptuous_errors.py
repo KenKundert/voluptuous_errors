@@ -15,7 +15,7 @@ voluptuous_error_msg_mappings = {
     "required key not provided": ("required key is missing", "value"),
 }
 __version__ = '0.1'
-__released__ = '2026-06-19'
+__released__ = '2026-06-28'
 
 # _nested_getvalue() {{{1
 def _nested_getvalue(data, path):

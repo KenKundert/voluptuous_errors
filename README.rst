@@ -17,8 +17,8 @@ Voluptuous Errors — Voluptuous Error Reporting when using NestedText and Infor
     :target: https://pypi.python.org/pypi/voluptuous_errors/
 
 :Author: Ken Kundert
-:Version: 0.0.0
-:Released: 2024-02-25
+:Version: 0.1
+:Released: 2026-06-28
 
 
 A convenience function used for reporting voluptuous_ errors from nestedtext_ 
@@ -62,8 +62,8 @@ Releases
 
 Latest development release
 """"""""""""""""""""""""""
-| Version: 0.0.0
-| Released: 2024-03-25
+| Version: 0.1
+| Released: 2026-06-28
 
 
 0.1 (2026-06-28)
