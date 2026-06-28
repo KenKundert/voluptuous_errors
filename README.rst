@@ -66,7 +66,12 @@ Latest development release
 | Released: 2026-06-28
 
 
-0.1 (2026-06-28)
+0.2 (2026-06-28)
+""""""""""""""""
+- Return error count
+
+
+0.1 (2026-06-10)
 """"""""""""""""
 - Improve error message (include value as codicil if appropriate).
 
