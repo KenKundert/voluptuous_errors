@@ -28,7 +28,7 @@ repository = "https://github.com/KenKundert/voluptuous_errors"
 
 
 [build-system]
-requires = ["flit_core >=2,<4"]
+requires = ["flit_core >=2"]
 build-backend = "flit_core.buildapi"
 
 [tool.pytest.ini_options]

@@ -66,7 +66,7 @@ Latest development release
 | Released: 2024-03-25
 
 
-0.1 (2026-06-10)
+0.1 (2026-06-28)
 """"""""""""""""
 - Improve error message (include value as codicil if appropriate).
 
