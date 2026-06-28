@@ -14,7 +14,7 @@ voluptuous_error_msg_mappings = {
     "expected a dictionary": ("expected a key-value pair", "value"),
     "required key not provided": ("required key is missing", "value"),
 }
-__version__ = '0.1'
+__version__ = '0.2'
 __released__ = '2026-06-28'
 
 # _nested_getvalue() {{{1
